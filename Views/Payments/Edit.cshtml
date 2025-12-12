@@ -1,0 +1,36 @@
+@model RealEstateManagement.Models.Payment
+
+@{
+	ViewData["Title"] = "Edit Payment";
+}
+
+<h1>Edit Payment</h1>
+
+<form asp-action="Edit" method="post">
+	@Html.AntiForgeryToken()
+	<input type="hidden" asp-for="Payment_ID" />
+	<div class="form-group">
+		<label asp-for="PaymentDate" class="control-label"></label>
+		<input asp-for="PaymentDate" class="form-control" type="date" />
+		<span asp-validation-for="PaymentDate" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="AmountPaid" class="control-label"></label>
+		<input asp-for="AmountPaid" class="form-control" />
+		<span asp-validation-for="AmountPaid" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Contract_ID" class="control-label"></label>
+		<select asp-for="Contract_ID" class="form-control" asp-items="@(ViewData["ContractID"] as Microsoft.AspNetCore.Mvc.Rendering.SelectList)">
+			<option value="">-- Select Contract --</option>
+		</select>
+		<span asp-validation-for="Contract_ID" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="PaymentMethod" class="control-label"></label>
+		<input asp-for="PaymentMethod" class="form-control" />
+		<span asp-validation-for="PaymentMethod" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

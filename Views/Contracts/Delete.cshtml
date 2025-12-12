@@ -1,0 +1,26 @@
+@model RealEstateManagement.Models.Contract
+
+@{
+	ViewData["Title"] = "Delete Contract";
+}
+
+<h1>Delete Contract</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+	<h4>Contract</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">Type</dt>
+		<dd class="col-sm-10">@Model.ContractType</dd>
+		<dt class="col-sm-2">Date</dt>
+		<dd class="col-sm-10">@Model.ContractDate</dd>
+	</dl>
+
+	<form asp-action="DeleteConfirmed" method="post">
+		@Html.AntiForgeryToken()
+		<input type="hidden" asp-for="Contract_ID" />
+		<button type="submit" class="btn btn-danger">Delete</button>
+		<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+	</form>
+</div>

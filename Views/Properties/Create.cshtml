@@ -1,0 +1,60 @@
+@model RealEstateManagement.Models.Property
+
+@{
+	ViewData["Title"] = "Create Property";
+}
+
+<h1>Create Property</h1>
+
+<form asp-action="Create" method="post">
+	@Html.AntiForgeryToken()
+	@if (!ViewData.ModelState.IsValid)
+	{
+		<div class="alert alert-danger">
+			<h5>Validation Errors:</h5>
+			<ul>
+				@foreach (var modelState in ViewData.ModelState.Values)
+				{
+					@foreach (var error in modelState.Errors)
+					{
+						<li>@error.ErrorMessage</li>
+					}
+				}
+			</ul>
+		</div>
+	}
+	<div class="form-group">
+		<label asp-for="Address" class="control-label"></label>
+		<input asp-for="Address" class="form-control" autocomplete="street-address" />
+		<span asp-validation-for="Address" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="PropertyType" class="control-label"></label>
+		<input asp-for="PropertyType" class="form-control" autocomplete="off" />
+		<span asp-validation-for="PropertyType" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Area" class="control-label"></label>
+		<input asp-for="Area" class="form-control" autocomplete="off" />
+		<span asp-validation-for="Area" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Price" class="control-label"></label>
+		<input asp-for="Price" class="form-control" autocomplete="off" />
+		<span asp-validation-for="Price" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Status" class="control-label"></label>
+		<input asp-for="Status" class="form-control" autocomplete="off" />
+		<span asp-validation-for="Status" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Agent_ID" class="control-label"></label>
+		<select asp-for="Agent_ID" class="form-control" asp-items="@(ViewData["AgentID"] as Microsoft.AspNetCore.Mvc.Rendering.SelectList)">
+			<option value="">-- Select Agent --</option>
+		</select>
+		<span asp-validation-for="Agent_ID" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+	<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

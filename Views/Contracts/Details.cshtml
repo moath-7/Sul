@@ -1,0 +1,23 @@
+@model RealEstateManagement.Models.Contract
+
+@{
+	ViewData["Title"] = "Contract Details";
+}
+
+<h1>Contract Details</h1>
+
+<div>
+	<h4>Contract</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">Type</dt>
+		<dd class="col-sm-10">@Model.ContractType</dd>
+		<dt class="col-sm-2">Date</dt>
+		<dd class="col-sm-10">@Model.ContractDate</dd>
+		<dt class="col-sm-2">Amount</dt>
+		<dd class="col-sm-10">@Model.Amount</dd>
+	</dl>
+
+	<a asp-action="Edit" asp-route-id="@Model.Contract_ID" class="btn btn-primary">Edit</a>
+	<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,50 @@
+@model RealEstateManagement.Models.Contract
+
+@{
+	ViewData["Title"] = "Edit Contract";
+}
+
+<h1>Edit Contract</h1>
+
+<form asp-action="Edit" method="post">
+	@Html.AntiForgeryToken()
+	<input type="hidden" asp-for="Contract_ID" />
+	<div class="form-group">
+		<label asp-for="ContractType" class="control-label"></label>
+		<input asp-for="ContractType" class="form-control" />
+		<span asp-validation-for="ContractType" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="ContractDate" class="control-label"></label>
+		<input asp-for="ContractDate" class="form-control" type="date" />
+		<span asp-validation-for="ContractDate" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Amount" class="control-label"></label>
+		<input asp-for="Amount" class="form-control" />
+		<span asp-validation-for="Amount" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Customer_ID" class="control-label"></label>
+		<select asp-for="Customer_ID" class="form-control" asp-items="@(ViewData["CustomerID"] as Microsoft.AspNetCore.Mvc.Rendering.SelectList)">
+			<option value="">-- Select Customer --</option>
+		</select>
+		<span asp-validation-for="Customer_ID" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Property_ID" class="control-label"></label>
+		<select asp-for="Property_ID" class="form-control" asp-items="@(ViewData["PropertyID"] as Microsoft.AspNetCore.Mvc.Rendering.SelectList)">
+			<option value="">-- Select Property --</option>
+		</select>
+		<span asp-validation-for="Property_ID" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="Agent_ID" class="control-label"></label>
+		<select asp-for="Agent_ID" class="form-control" asp-items="@(ViewData["AgentID"] as Microsoft.AspNetCore.Mvc.Rendering.SelectList)">
+			<option value="">-- Select Agent --</option>
+		</select>
+		<span asp-validation-for="Agent_ID" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
