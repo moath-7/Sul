@@ -223,6 +223,7 @@ G:\241\Sul\obj\Debug\net10.0\RealEstateManagement.csproj.CoreCompileInputs.cache
 G:\241\Sul\obj\Debug\net10.0\RealEstateManagement.MvcApplicationPartsAssemblyInfo.cache
 G:\241\Sul\obj\Debug\net10.0\RealEstateManagement.RazorAssemblyInfo.cache
 G:\241\Sul\obj\Debug\net10.0\RealEstateManagement.RazorAssemblyInfo.cs
+G:\241\Sul\obj\Debug\net10.0\RealEstateManagement.sourcelink.json
 G:\241\Sul\obj\Debug\net10.0\rjimswa.dswa.cache.json
 G:\241\Sul\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 G:\241\Sul\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
