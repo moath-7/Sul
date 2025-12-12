@@ -1,22 +1,22 @@
 @model IEnumerable<RealEstateManagement.Models.Contract>
 
 @{
-	ViewData["Title"] = "Contracts";
+	ViewData["Title"] = "العقود";
 }
 
-<h1>Contracts</h1>
+<h1>العقود</h1>
 
 <p>
-	<a asp-action="Create" class="btn btn-primary">Create New</a>
+	<a asp-action="Create" class="btn btn-primary">إنشاء جديد</a>
 </p>
 
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>Type</th>
-			<th>Date</th>
-			<th>Amount</th>
-			<th></th>
+			<th>النوع</th>
+			<th>التاريخ</th>
+			<th>المبلغ</th>
+			<th>إجراءات</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -28,9 +28,9 @@
 				<td>@item.ContractDate.ToShortDateString()</td>
 				<td>@item.Amount</td>
 				<td>
-					<a asp-action="Edit" asp-route-id="@item.Contract_ID">Edit</a> |
-					<a asp-action="Details" asp-route-id="@item.Contract_ID">Details</a> |
-					<a asp-action="Delete" asp-route-id="@item.Contract_ID">Delete</a>
+					<a asp-action="Edit" asp-route-id="@item.Contract_ID">تعديل</a> |
+					<a asp-action="Details" asp-route-id="@item.Contract_ID">تفاصيل</a> |
+					<a asp-action="Delete" asp-route-id="@item.Contract_ID">حذف</a>
 				</td>
 			</tr>
 		}
